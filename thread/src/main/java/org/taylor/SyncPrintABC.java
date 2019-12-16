@@ -13,11 +13,11 @@ public class SyncPrintABC {
 
         Print1 Print1 = new Print1();
 
-        new Thread(Print1::printA).start();
+        new Thread(Print1::printA, "A").start();
 
-        new Thread(Print1::printB).start();
+        new Thread(Print1::printB, "B").start();
 
-        new Thread(Print1::printC).start();
+        new Thread(Print1::printC, "C").start();
 
     }
 }
@@ -33,7 +33,7 @@ class Print1 {
                     wait();
                 }
                 System.out.println(number.incrementAndGet() + "  A");
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
                 flag = 2;
                 notifyAll();
             }
@@ -49,7 +49,7 @@ class Print1 {
                     wait();
                 }
                 System.out.println(number.incrementAndGet() + "  B");
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
                 flag = 3;
                 notifyAll();
             }
@@ -65,7 +65,7 @@ class Print1 {
                     wait();
                 }
                 System.out.println(number.incrementAndGet() + "  C");
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
                 flag = 1;
                 notifyAll();
             }
