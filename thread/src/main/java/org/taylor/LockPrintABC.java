@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author taylor
  * @date 2019/12/16 16:48
  */
-public class PrintABC {
+public class LockPrintABC {
     public static void main(String[] args) {
 
         Print print = new Print();
