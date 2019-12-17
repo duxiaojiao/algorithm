@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * 同步方式三个线程顺序打印ABC
  * @author taylor
  * @date 2019/12/16 17:09
  */
