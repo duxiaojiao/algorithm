@@ -5,8 +5,8 @@ import java.util.Stack;
 public class IsValid {
 
     public static void main(String[] args) {
-        String s="{[()]})";
-        boolean valid = isValid(s);
+        String s="()[]{}";
+        boolean valid = isValidSimple(s);
         System.out.println(valid);
     }
 
@@ -35,6 +35,17 @@ public class IsValid {
             }
         }
         return stack.size() == 0;
+    }
+
+    private static boolean isValidSimple(String s) {
+        Stack<Character>stack = new Stack<Character>();
+        for(char c: s.toCharArray()){
+            if(c=='(')stack.push(')');
+            else if(c=='[')stack.push(']');
+            else if(c=='{')stack.push('}');
+            else if(stack.isEmpty()||c!=stack.pop())return false;
+        }
+        return stack.isEmpty();
     }
 
 }
